@@ -55,3 +55,11 @@ async function findSuperHeroes() {
     console.log('Superhéroes econtrados:',heroes);
 }
 findSuperHeroes();
+
+//Eliminar un Documento
+async function deleteSuperHero(nombreSuperHeroe) {
+    const result= await SuperHero.deleteOne(
+        {nombreSuperHeroe:nombreSuperHeroe}); //Filtra por nombre del superheroe
+    console.log('Superhéroe eliminado:',result);
+}
+deleteSuperHero('Spiderman');
