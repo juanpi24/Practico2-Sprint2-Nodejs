@@ -38,3 +38,13 @@ async function insertSuperHero() {
       console.log('Superhéroe Insertado:', hero);
   }
 insertSuperHero();
+
+//Actualizar un Documento
+ async function updateSuperHero(nombreSuperHeroe) {
+    const result= await SuperHero.updateOne(
+        {nombreSuperHeroe: nombreSuperHeroe},  //Filtra por nombre del superheroe
+        {$set:{edad:42, planetaOrigen:"Tierra"}}  //Actualiza los campos edad y planeta de origen
+    );
+    console.log('Resultado de la actualización:', result);
+ }
+ updateSuperHero('Halck');
