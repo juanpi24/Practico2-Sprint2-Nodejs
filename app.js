@@ -19,3 +19,22 @@ const superheroSchema= new mongoose.Schema({
 },{collection: 'Grupo-12'});
 
 const SuperHero= mongoose.model('SuperHero', superheroSchema);
+
+//Insertar un Documento
+async function insertSuperHero() {
+      const hero= new SuperHero({
+          nombreSuperHeroe:'Spiderman',
+          nombreReal:'Peter Parker',
+          edad:25,
+          planetaOrigen:'Tierra',
+          debilidad: 'Radioactiva',
+          poderes: ['Trepar paredes', 'Sentido arácnido', 'Super feurza', 'Agilidad'],
+          aliados: ['Iroman'],
+          enemigos: ['Duende Verde'],
+          creador: 'Juan Pablo Millicay'
+
+      });
+      await hero.save();
+      console.log('Superhéroe Insertado:', hero);
+  }
+insertSuperHero();
