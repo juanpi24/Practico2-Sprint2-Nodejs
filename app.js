@@ -48,3 +48,10 @@ insertSuperHero();
     console.log('Resultado de la actualización:', result);
  }
  updateSuperHero('Halck');
+
+ //Buscar un documento
+async function findSuperHeroes() {
+    const heroes= await SuperHero.find({planetaOrigen:'Tierra'});
+    console.log('Superhéroes econtrados:',heroes);
+}
+findSuperHeroes();
