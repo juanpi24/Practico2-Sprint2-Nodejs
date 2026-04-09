@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 //===================
 async function connectDB(){
     try {
-        await mongoose.connect("***");
+        await mongoose.connect("conexion");
         console.log("Conexión exítosa a MongoDB");
     } catch (error) {
         console.error('Error al conectar a MongoDB:', error);
